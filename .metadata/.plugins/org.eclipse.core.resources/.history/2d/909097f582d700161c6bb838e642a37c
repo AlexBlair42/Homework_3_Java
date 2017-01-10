@@ -1,0 +1,42 @@
+import javax.swing.JComponent;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.net.URL;
+
+public class UI extends JComponent {
+	JFrame frame;
+	
+	public UI() 
+	{
+		initialize();
+		frame.setVisible(true);
+	}
+
+	private void initialize()
+	{
+		frame = new JFrame();
+		frame.setBounds(300,300,500,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.setLayout(new FlowLayout());
+		
+		try
+		{
+			Toolkit toolkit = Toolkit.getDefaultToolkit();
+			URL imgURL = getClass().getResource("/resource/City.jpg");
+			Image img = toolkit.getImage(imgURL);
+			img = img.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+			
+			ImageIcon icon = new ImageIcon(img);
+			JButton btn = new JButton(icon);
+			frame.add(btn);
+		}
+		catch (Exception ex){;}
+	}
+	
+	public static void main(String[] args)
+	{
+		UI u = new UI();
+	}
+}

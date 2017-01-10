@@ -1,0 +1,48 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.net.URL;
+import javax.swing.*;
+
+public class UI extends JComponent implements MouseMotionListener {
+int imageX, imageY;
+    Image imagec, imagep;
+
+    public UI(Image c, Image ps) {
+      imagec = c;
+      imagep = ps;
+     // PoliceStation = ps;
+      addMouseMotionListener(this);
+    }
+
+    public void mouseDragged(MouseEvent e) {
+      imageX = e.getX();
+      imageY = e.getY();
+      repaint();
+    }
+    public void mouseMoved(MouseEvent e) {}
+
+    public void paint(Graphics g) {
+      Graphics2D g2 = (Graphics2D)g;
+      g2.drawImage(imagec, 0, 0, this);
+      g2.drawImage(imagep, 2,6, this);
+     // g2.drawImage(PoliceStation, 600, 900, this);
+    }
+    
+    static int imageWidth=60, imageHeight=60;
+    public static void main(String[] args) {
+       String city = "/resources/City.jpg";
+       String pol = "/resources/PoliceStation.jpg";
+
+       Image imagec = Toolkit.getDefaultToolkit().getImage(UI.class.getResource(city));
+       Image imagep = Toolkit.getDefaultToolkit().getImage(UI.class.getResource(pol));
+       imagec = imagec.getScaledInstance(imageWidth,imageHeight,Image.SCALE_DEFAULT);
+       //Image imagep = Toolkit.getDefaultToolkit().getImage(UI.class.getResource(policestation));
+       JFrame frame = new JFrame("Simville");
+       frame.add( new UI(imagec, imagep) );
+       frame.setSize(1000, 1000);
+       frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+       frame.setVisible(true);
+     }
+ }
+
+

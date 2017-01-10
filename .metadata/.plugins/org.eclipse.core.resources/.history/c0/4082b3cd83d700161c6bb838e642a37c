@@ -1,0 +1,54 @@
+import javax.swing.JComponent;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.net.URL;
+
+public class UI extends JComponent implements MouseMotionListener {
+	int imageX, imageY;
+	Image image, imageField, imagePolice;
+	
+	public UI(Image i, Image ifield) 
+	{
+		image = i;
+		imageField = ifield;
+		imagePolice = ip;
+		addMouseMotionListener(this);
+	}
+	
+	public void mouseDragged(MouseEvent e)
+	{
+		imageX = e.getX();
+		imageY = e.getY();
+		repaint();
+	}
+	
+	public void mouseMoved(MouseEvent e){}
+	
+	public void paint(Graphics g)
+	{
+		Graphics2D g2 = (Graphics2D)g;
+		g2.drawImage(imageField, 0, 0, this);
+		g2.drawImage(imagePolice, 0, 0, this);
+		g2.drawImage(image,  imageX,  imageY, this);
+	}
+	
+	static int imageWidth = 90, imageHeight = 90;
+	public static void main(String[] args)
+	{
+		String city = "/resource/City.jpg";
+		String police = "/resource/PoliceStation.jpg";
+		String school = "/resource/school.png";
+		
+	      Image image = Toolkit.getDefaultToolkit().getImage(UI.class.getResource(police));
+	      image = image.getScaledInstance(imageWidth,imageHeight,Image.SCALE_DEFAULT);
+	      Image imageField = Toolkit.getDefaultToolkit().getImage(UI.class.getResource(city));
+	      Image imagePolice = Toolkit.getDefaultToolkit().getImage(UI.class.getResource(school));
+	      JFrame frame = new JFrame("City");
+	      frame.add( new UI(image, imageField) );
+	      frame.setSize(800, 800);
+	      frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+	      frame.setVisible(true);
+
+	}
+}

@@ -1,0 +1,19 @@
+import javax.swing.JComponent;
+import javax.swing.*;
+
+
+public class UserInterface extends JComponent {
+	public UserInterface() {
+		
+		JFrame frame = new JFrame();
+		frame.setBounds(0, 0, 681, 523);
+		add(frame);
+		frame.add(new JLabel(new ImageIcon("/resource/City.jpg")));
+		
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+}

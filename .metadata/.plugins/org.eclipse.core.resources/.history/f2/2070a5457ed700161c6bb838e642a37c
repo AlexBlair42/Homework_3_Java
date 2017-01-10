@@ -1,0 +1,10 @@
+import javax.swing.JComponent;
+
+public class UserInterface extends JComponent {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
