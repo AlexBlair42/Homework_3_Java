@@ -35,9 +35,6 @@ int imageX, imageY;
        String City = "/resource/City.jpg";
        String School = "/resource/school.png";
        String CityHall = "/resource/cityHall.jpg";
-       String officer = "/resource/police.jpg";
-       String kid = "/resource/kid.jpg";
-       String teacher = "/resource/teacher.jpg";
 
        Image imagec = Toolkit.getDefaultToolkit().getImage(UI.class.getResource(City));
        
