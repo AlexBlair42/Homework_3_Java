@@ -1,0 +1,40 @@
+
+public class Teacher extends Person implements Employee {
+	/**
+	 * Teachers are a sub class of Person and they are also employees
+	 * @see
+	 * @author Alex Blair
+	 */
+	int Grade_lvl;
+	String Cert;
+	int money = 0;
+	
+	/**
+	 * This is the constructor for a "Teacher" object and it has the following parameters.
+	 * @param s 
+	 * @param a
+	 * @param p
+	 */
+	public Teacher(String n, int a, long p, int g, String c)
+	{
+		super(n,a,p);
+		Grade_lvl = g;
+		Cert = c;
+	}
+	
+/**
+ * These are the functions that implement Employee
+ * @return Money
+ * @return ID
+ */
+public void getPaid(int m) 
+{
+	money+=m;
+}
+
+public long reqID()
+{
+	return ID;
+}
+
+}
