@@ -11,7 +11,6 @@ import javax.swing.*;
  * @author Alex Blair
  * @version 1.2
  */
-// I realize that this is not 100% complete but this is as far as I could get before the due date. 
 
 public class UI extends JComponent implements MouseMotionListener, MouseListener {
 
