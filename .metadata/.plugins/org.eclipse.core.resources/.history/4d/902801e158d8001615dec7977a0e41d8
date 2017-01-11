@@ -103,8 +103,7 @@ int KidY = 50;
     
     
     /**
-     * This is where The information for if the mouse is clicked on a person is handled. 
-     * The Show occupants does not entirely work.
+     * This is where The information for if the mouse is clicked on a person is handeled. 
      */
     public void mouseClicked(MouseEvent e)
     {
