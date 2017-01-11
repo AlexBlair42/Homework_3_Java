@@ -20,7 +20,7 @@ public class Police extends Person implements Employee {
 	public Police(String n, int a, long p, Role r)
 	{
 		super(n,a,p);
-		role = Role.Patrol;
+		role = r;
 	}
 
 	/**
@@ -31,8 +31,9 @@ public class Police extends Person implements Employee {
 		money+= m;
 	}
 
-	public long reqID()
+	public long reqId()
 	{
 		return ID;
 	}
+
 }

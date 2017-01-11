@@ -8,8 +8,7 @@ public class CityHall extends Building {
 	 * This also has an array of occupants.
 	 * @author Alex Blair
 	 */
-	
-	ArrayList<Person> Occupancy;
+
 	
 	/**
 	 * Create a constructor with the following parameters.
@@ -18,10 +17,21 @@ public class CityHall extends Building {
 	 * @param p
 	 */
 	
-	public CityHall(String n, String a, ArrayList<Person> p)
+	public CityHall(String n, String a)
 	{
 		super(n,a);
-		Occupancy = p;
+		
+	}
+
+	private ArrayList<String> occupants = new ArrayList();
+	
+	public void showOccupants() {
+		System.out.println("The Police in City Hall are:");
+		for (String j: occupants)
+{
+	System.out.printf("%s\n",j);
+}
+		
 	}
 
 }
