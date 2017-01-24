@@ -11,7 +11,7 @@ import javax.swing.*;
  * @author Alex Blair
  * @version 1.2
  */
-// I realize that this is not 100% complete but this is as far as I could get before the due date. 
+
 
 public class UI extends JComponent implements MouseMotionListener, MouseListener {
 
@@ -108,12 +108,12 @@ int KidY = 50;
      */
     public void mouseClicked(MouseEvent e)
     {
-    	if(e.getY() > 400 && e.getY() < 600 && e.getX() >700 && e.getX()<900){
+    	if(e.getY() > 100 && e.getY() < 200 && e.getX() > 400 && e.getX()< 500){
 			System.out.printf("%s,%s\n",buildings[1].Name,buildings[1].Address);
 			s.showOccupants();
 		}
 		
-		else if (e.getY() > 0 && e.getY() < 150 && e.getX() > 350 && e.getX() < 500)
+		else if (e.getY() > 25 && e.getY() < 40 && e.getX() > 800 && e.getX() < 900)
 		{
 			System.out.printf("%s,%s\n",buildings[0].Name,buildings[0].Address);
 			c.showOccupants();
@@ -153,18 +153,34 @@ int KidY = 50;
     	if (dragged == 1) {
 	      PoliceX = e.getX();
 	      PoliceY = e.getY();
+	      if (PoliceX > 875 && PoliceX < 900 && PoliceY > 30 && PoliceY < 50){
+	    	  c.addEmployee(PoliceOfficer);
+	      }else if (PoliceX > 875 || PoliceX < 900 || PoliceY > 30 || PoliceY < 50){
+				c.removeEmployee(PoliceOfficer);
+	    	}
     	}
     	else if (dragged == 2)
     	{
     	TeacherX = e.getX();
       	TeacherY = e.getY();
+        if (TeacherX > 450 && TeacherX < 550 && TeacherY > 150 && TeacherY < 200){
+	    	  s.addEmployee(Teacher1);
+    	}else if (TeacherX > 450 || TeacherX < 550 || TeacherY >150 || TeacherY < 200){
+				s.removeEmployee(Teacher1);
+    	}
     	}
     	else if (dragged == 3)
     	{
     	KidX = e.getX();
     	KidY = e.getY();
+    	  if (KidX > 450 && KidX < 550 && KidY > 150 && KidY < 200){
+	    	  s.addEmployee(Kid1);
+    	  }else if (KidX > 450 || KidX < 550 || KidY >150 || KidY < 200){
+				s.removeEmployee(Kid1);
+    	}
     	}
       repaint();
+    	
     }
     
     public void mouseMoved(MouseEvent e) {}

@@ -29,7 +29,7 @@ public class City {
 		/**
 		 * This creates a new instance of a School.
 		 */
-		School elem = new School("Simcity Elementary", "12363 N Sim Rd", schoolOcc);
+		School elem = new School("Simcity Elementary", "12363 N Sim Rd");
 		buildings.add(elem);
 		
 		
@@ -41,7 +41,7 @@ public class City {
 		CityHallOcc.add(new Police("Chief O'Neil", 40, 2523685, Police.Role.Chief));
 		CityHallOcc.add(new Police("Captain Ruiz", 22, 6354719, Police.Role.Captain));
 		CityHallOcc.add(new Police("Sargent Connors", 25, 4154798, Police.Role.Sargent));
-		CityHall CH = new CityHall("Simcity City Hall", "446 NE Raspberry Ln", CityHallOcc);
+		CityHall CH = new CityHall("Simcity City Hall", "446 NE Raspberry Ln");
 		buildings.add(CH);
 		
 		

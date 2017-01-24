@@ -31,4 +31,15 @@ public class School extends Building {
 		
 	}
 	
+	public void addEmployee(String Teacher1) {
+		if(occupants.contains(Name)){}
+		else 
+			occupants.add(Name);
+		
+	}
+	
+	public void removeEmployee(String Name){
+		occupants.remove(Name);
+	}
+	
 }

@@ -34,4 +34,15 @@ public class CityHall extends Building {
 		
 	}
 
+	public void addEmployee(String policeOfficer) {
+		if(occupants.contains(Name)){}
+		else 
+			occupants.add(Name);
+		
+	}
+	
+	public void removeEmployee(String Name){
+		occupants.remove(Name);
+	}
+
 }
