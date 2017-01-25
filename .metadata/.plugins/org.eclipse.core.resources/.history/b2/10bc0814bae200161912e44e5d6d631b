@@ -32,7 +32,7 @@ public void getPaid(int m)
 	money+=m;
 }
 
-public long reqId()
+public long reqid()
 {
 	return ID;
 }
